@@ -1,7 +1,7 @@
 let db;
 
 //open indexDB
-const request = window.indexedDB.open("budgetList", 1);
+const request = window.indexedDB.open("budget", 1);
 
 // create object store inside onupgradeneeded
 request.onupgradeneeded = function (event) {
@@ -12,7 +12,7 @@ request.onupgradeneeded = function (event) {
 // function to determine if user is back online
 request.onsuccess = function (event) {
 
-  console.log("Successful Write");
+  console.log(`Found result: ${event.target.result}`);
   db = event.target.result;
 
   if (navigator.onLine) {
