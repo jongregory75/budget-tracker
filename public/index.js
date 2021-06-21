@@ -3,11 +3,11 @@ let myChart;
 
 if ("serviceWorker" in Navigator) {
   window.addEventListener("load", () => {
-    navigator.serviceWorker.register("/serviceworker.js")
-    .then(reg) => console.log("Service Worker Online")
+    navigator.serviceWorker
+    .register("/serviceworker.js")
+    .then((reg) => console.log("Service Worker Online"))
     .catch((err) => console.log(`ERROR IN SERVICE WORKER ${err}`))
-  }
-  )
+  })
 }
 
 fetch("/api/transaction")
